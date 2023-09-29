@@ -2,6 +2,11 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
+ 
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +20,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $users = User::all();
+
+    dd($users);
+    // return view('welcome');
 });
 
 Route::get('/dashboard', function () {
